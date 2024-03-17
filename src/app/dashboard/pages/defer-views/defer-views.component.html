@@ -1,0 +1,22 @@
+<shared-title title="Defer views"></shared-title>
+<section class="grid grid-cols-1 gap-3">
+  @defer () {
+  <heavy-loaders-slow />
+  }@placeholder {
+  <div class="h-56 flex items-center justify-center bg-slate-300 p-5">
+    Placeholder content
+  </div>
+  } @defer (on idle) {
+  <heavy-loaders-slow />
+  }@placeholder {
+  <div class="h-56 flex items-center justify-center bg-slate-300 p-5">
+    Placeholder content
+  </div>
+  } @defer (on viewport) {
+  <heavy-loaders-slow />
+  }@placeholder {
+  <div class="h-56 flex items-center justify-center bg-slate-300 p-5">
+    Placeholder content
+  </div>
+  }
+</section>

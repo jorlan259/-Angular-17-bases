@@ -1,0 +1,99 @@
+<shared-title title="Defer options"></shared-title>
+<div class="flex flex-col gap-3">
+  <section>
+    <h1 class="text-xl">Interactions</h1>
+    <hr class="my-2" />
+    <!-- El "on interaction" solo se activa cuando el usuario interactua con el elemento -->
+    @defer (on interaction) {
+    <heavy-loaders-fast cssClass="bg-blue-500 h-20">
+      <span>On Interactions</span>
+    </heavy-loaders-fast>
+    }@placeholder {
+    <div class="w-full h-20 bg-purple-600">
+      charge interaction, click on me to activate
+    </div>
+    }
+  </section>
+
+  <section>
+    <button
+      #btnInteraction
+      class="p-2 bg-blue-500 hover:bg-blue-700 transition-all rounded text-white my-2"
+    >
+      Click me!
+    </button>
+    <hr class="my-2" />
+
+    <!-- El "on interaction" solo se activa cuando el usuario interactua con el elemento -->
+    @defer (on interaction(btnInteraction)) {
+    <heavy-loaders-fast cssClass="bg-blue-500 h-20">
+      <span>On Interactions with button</span>
+    </heavy-loaders-fast>
+    }@placeholder {
+    <div class="w-full h-20 bg-purple-600">
+      charge interaction, click on button to activate
+    </div>
+    }
+  </section>
+
+  <section>
+    <!-- El "on interaction" solo se activa cuando el usuario interactua con el elemento -->
+    @defer (on hover(btnInteraction)) {
+    <heavy-loaders-fast cssClass="bg-blue-500 h-20">
+      <span>On hover on button</span>
+    </heavy-loaders-fast>
+    }@placeholder {
+    <div class="w-full h-20 bg-purple-600">
+      charge interaction, hover on button to activate
+    </div>
+
+    }
+  </section>
+
+  <section>
+    <!-- El "on interaction" solo se activa cuando el usuario interactua con el elemento -->
+    @defer (on hover) {
+    <heavy-loaders-fast cssClass="bg-blue-500 h-20">
+      <span>On hover</span>
+    </heavy-loaders-fast>
+    }@placeholder {
+    <div class="w-full h-20 bg-purple-600">
+      charge interaction, hover on me to activate
+    </div>
+
+    }
+  </section>
+
+  <section>
+    <!-- El "on interaction" solo se activa cuando el usuario interactua con el elemento -->
+    @defer (on immediate) {
+    <heavy-loaders-fast cssClass="bg-blue-500 h-20">
+      <span>On immediate</span>
+    </heavy-loaders-fast>
+    }@placeholder {
+    <div class="w-full h-20 bg-purple-600">charge interaction</div>
+    }
+  </section>
+
+  <section>
+    <!-- El "on interaction" solo se activa cuando el usuario interactua con el elemento -->
+    @defer (on timer(2000)) {
+    <heavy-loaders-fast cssClass="bg-blue-500 h-20">
+      <span>On timer</span>
+    </heavy-loaders-fast>
+    }@placeholder {
+    <div class="w-full h-20 bg-purple-600">charge interaction</div>
+    }
+  </section>
+
+  <section>
+    <!-- El "on interaction" solo se activa cuando el usuario interactua con el elemento -->
+    @defer (on hover; prefetch on idle) {
+    <heavy-loaders-fast cssClass="bg-blue-500 h-20">
+      <span>On hover, idle</span>
+    </heavy-loaders-fast>
+    }@placeholder {
+    <div class="w-full h-20 bg-purple-600">charge interaction</div>
+    }
+  </section>
+</div>

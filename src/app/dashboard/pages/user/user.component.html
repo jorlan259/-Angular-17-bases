@@ -1,0 +1,12 @@
+<shared-title title="{{ userName() }}" />
+@if (user()) {
+  <img
+    [srcset]="user()!.avatar"
+    [alt]="user()!.firstName"
+    title="{{ user()!.firstName }}"
+  />
+  <p>{{ user()!.firstName }} {{ user()!.lastName }}</p>
+  <p>{{ user()!.email }}</p>
+} @else {
+  <p>cargando información</p>
+}
